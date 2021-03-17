@@ -1,12 +1,22 @@
 #! /bin/bash
 
-Result=$((RANDOM%2))
+countHead=0
+countTail=0
+number=10
 
-if [ $Result -eq 0 ]
-then
-        echo HEADS
-elif [ $Result -eq 1 ]
- then
-        echo TAILS
-fi
 
+for (( count=0; count<$number; count++ ))
+do
+	Result=$((RANDOM%2))
+	if [ $Result -eq 0 ]
+	then
+        	countHead=$((countHead+1))
+
+	elif [ $Result -eq 1 ]
+ 	then
+        	countTail=$((countTail+1))
+	fi
+done
+
+echo "head win" $countHead "times"
+echo "tail win" $countTail "times"
