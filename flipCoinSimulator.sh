@@ -2,7 +2,7 @@
 
 countHead=0
 countTail=0
-number=10
+number=21
 
 
 for (( count=0; count<$number; count++ ))
@@ -17,6 +17,12 @@ do
         	countTail=$((countTail+1))
 	fi
 done
-
-echo "head win" $countHead "times"
-echo "tail win" $countTail "times"
+if [ $countHead -gt $countTail ]
+then
+	echo "head win" $countHead "times"
+elif [ $countHead -eq $countTail ]
+then
+	echo "tie match"
+else
+	echo "tail win" $countTail "times"
+fi
